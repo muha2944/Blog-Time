@@ -1,0 +1,83 @@
+.pageWrapper {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.loadingWrapper {
+  min-height: 100vh;
+  background: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingText {
+  color: #6b7280;
+}
+
+.mainWrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.notFoundWrapper {
+  text-align: center;
+  color: #111827;
+}
+
+.notFoundTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.notFoundText {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.backLink {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #1d4ed8;
+}
+
+.articleCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.articleBody {
+  padding: 2rem;
+}
+
+.articleHeader {
+  margin-bottom: 2rem;
+}
+
+.articleTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.articleDate {
+  color: #6b7280;
+}
+
+.proseWrapper {
+  color: #374151;
+  line-height: 1.75;
+}
+
+.contentText {
+  white-space: pre-wrap;
+}
