@@ -17,8 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Clicon - Blog Store",
-  description: "Clicon online blog store with latest articles and tech news",
+  title: "BLOG TIME - Blog Place",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  description: "BLOG TIME online blog store with latest articles and tech news",
 };
 
 export default function RootLayout({
