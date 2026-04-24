@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  description: "BLOG TIME online blog store with latest articles and tech news",
+  description: "BLOG TIME online blog page with latest articles and tech news",
 };
 
 export default function RootLayout({
