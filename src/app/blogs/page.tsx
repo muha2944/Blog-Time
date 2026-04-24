@@ -85,7 +85,7 @@ export default function BlogsPage() {
                 <div className={styles.blogBody}>
                   <div className={styles.blogBadge}>Blog</div>
                   <h2 className={styles.blogTitle}>
-                    <Link href={/blogs/} className={styles.blogLink}>
+                    <Link href={`/blogs/${blog.slug}`} className={styles.blogLink}>
                       {blog.title}
                     </Link>
                   </h2>
@@ -98,7 +98,7 @@ export default function BlogsPage() {
                         day: 'numeric',
                       })}
                     </time>
-                    <Link href={/blogs/} className={styles.readMoreLink}>
+                    <Link href={`/blogs/${blog.slug}`} className={styles.readMoreLink}>
                       Read More -▶
                     </Link>
                   </div>

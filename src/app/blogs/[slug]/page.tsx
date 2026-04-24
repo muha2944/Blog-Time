@@ -23,20 +23,21 @@ export default function BlogDetailPage() {
   const { user, isLoading: authLoading } = useAuth()
   const router = useRouter()
 
-  useEffect(() => {
-    if (!authLoading && !user) {
-      router.push('/auth')
-      return
-    }
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug
 
-    if (user && params.slug) {
-      fetchBlog()
-    }
-  }, [user, authLoading, params.slug, router])
+useEffect(() => {
+  if (!authLoading && !user) {
+    router.push('/auth')
+    return
+  }
+  if (user && slug) {
+    fetchBlog()
+  }
+}, [user, authLoading, slug])
 
   const fetchBlog = async () => {
     try {
-      const response = await fetch(/api/blogs/)
+      const response = await fetch(`/api/blogs/${slug}`)
       if (!response.ok) {
         if (response.status === 404) {
           throw new Error('Blog not found')
@@ -55,7 +56,6 @@ export default function BlogDetailPage() {
   if (authLoading || !user) {
     return (
       <div className={styles.loadingWrapper}>
-        <Navbar />
         <div className={styles.loadingText}>Loading...</div>
       </div>
     )
@@ -64,7 +64,6 @@ export default function BlogDetailPage() {
   if (loading) {
     return (
       <div className={styles.loadingWrapper}>
-        <Navbar />
         <div className={styles.loadingText}>Loading blog...</div>
       </div>
     )
@@ -73,7 +72,6 @@ export default function BlogDetailPage() {
   if (error || !blog) {
     return (
       <div className={styles.pageWrapper}>
-        <Navbar />
         <main className={styles.mainWrapper}>
           <div className={styles.notFoundWrapper}>
             <h1 className={styles.notFoundTitle}>Blog Not Found</h1>
@@ -89,7 +87,6 @@ export default function BlogDetailPage() {
 
   return (
     <div className={styles.pageWrapper}>
-      <Navbar />
       <main className={styles.mainWrapper}>
         <article className={styles.articleCard}>
           <div className={styles.articleBody}>
